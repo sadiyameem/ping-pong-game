@@ -194,3 +194,14 @@ function resetGame() {
     clearInterval(intervalID);
     gameStart();
 };
+
+const ppg = document.getElementById("ppg");
+let randomNum = () => {
+    return Math.floor(Math.random() * 100) + 50;
+};
+
+let changeColor = () => {
+    let randomColor = `rgb(${randomNum()},${randomNum()},${randomNum()})`;
+    document.body.style.backgroundColor = randomColor;
+};
+ppg.addEventListener("click", changeColor);
